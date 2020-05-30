@@ -1,0 +1,61 @@
+Tableau piles in Ace's Up initially hold 1 card
+    AcesUpTableauStrategyTest#testGetInitialSetUp()
+
+Ace's Up tableau pile method correctly determines if adding a specific card is legal or illegal.
+    AcesUpTableauStrategyTest#
+        testIsAddingLegal()
+        testIsAddingNullLegal()
+
+Ace's Up tableau pile method correctly determines if removing a specific card is legal or illegal.
+    AcesUpTableauStrategyTest#
+        testIsRemovingToHomecellLegalWithNoEmptyPiles()
+        testIsRemovingToHomecellLegalWithEmptyPiles()
+        testIsRemovingToTableauLegalWithNoEmptyPiles()
+        testIsRemovingToTableauLegalWithEmptyPiles()
+        testIsRemovingEmptyLegal()
+        testIsRemovingLegalWithBadInputs()
+
+Adding card to Ace's Up tableau pile increases its number of cards and results in that card being the tableau pile's new top card
+    (Baker's Dozen, Freecell and Ace's Up use the same method to add card so old test cases are used.)
+    BakersDozenGameTest#
+        testAddCardToTableauPiles()
+
+Removing card from Ace's Up tableau pile decreases its number of cards and results in following card being the new top card
+    (Baker's Dozen, Freecell and Ace's Up use the same method to remove card so old test cases are used.)
+    BakersDozenGameTest#
+        testRemoveCardFromTableauPiles()
+
+Homecell pile in Ace's Up initially holds 0 cards
+    AcesUpHomecellStrategyTest#
+        testGetInitialSetUp()
+
+Ace's Up homecell pile correctly determines if adding a specific card is legal or illegal (e.g., always legal)
+    AcesUpHomecellStrategyTest#
+        testIsAddingLegal()
+
+Ace's Up homecell pile correctly returns if removing top card is legal or illegal (e.g., always illegal)
+    HomecellStrategyTest#
+        testIsRemovingLegal()
+
+Adding card to Ace's Up homecell pile increases its number of cards and results in that card being the homecell pile's new top card
+    (Baker's Dozen, Freecell and Ace's Up use the same method to add card so old test cases are used.)
+    BakersDozenGameTest#
+        testAddCardToHomecellPiles()
+
+Ace's Up stock pile initially holds 48 cards
+    AcesUpStockStrategyTest#
+        testGetInitialSetUp()
+        testGetInitialSetUpWithBadInputs()
+
+Ace's Up stock pile correctly returns if adding a specific card is legal or illegal (e.g., always illegal)
+    AcesUpStockStrategyTest#
+        testIsAddingLegal()
+
+Ace's Up stock pile correctly returns if removing a specific card is legal or illegal (e.g., legal if the stock pile is not empty)
+    AcesUpStockStrategyTest#
+        testIsRemovingLegal()
+        testIsRemovingLegalWhenPileIsEmpty()
+
+Dealing cards from Ace's Up stock pile removes the top 4 cards, adds the removed cards to the tableau piles, and results in the 5th card being the new top card
+    AcesUpStockStrategyTest#
+        testInvokeDefaultSpecialAction()
